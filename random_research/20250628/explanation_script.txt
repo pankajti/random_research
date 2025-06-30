@@ -1,0 +1,10 @@
+# CODE_FILE: pytorch_sample.py
+[BLANK] Hello everyone and welcome to this quick tutorial on building a simple neural network with PyTorch!
+[LINE 0-3] We start by importing our necessary libraries: torch for tensors, nn for neural network modules, and random.
+[LINE 5-11] The get_sample_data function creates our synthetic dataset. It generates x values, adds some noise, and computes y based on a linear equation like y = mx + c.
+[LINE 13-22] Our SimpleNN class defines the neural network. It inherits from nn.Module. In the __init__, we set up a single nn.Linear layer because we're doing linear regression. This layer has one input feature and one output feature.
+[LINE 24-25] The forward method simply passes the input through our linear layer.
+[LINE 28-31] Inside the main execution block, we first get our sample data with specific m and c values, instantiate our network, define our loss function as Mean Squared Error, and set up the Adam optimizer.
+[LINE 33-41, highlight=34,35,36,37] This loop runs for 1000 iterations. In each step, we zero out the gradients, perform a forward pass to get predictions, calculate the loss, then l.backward() computes gradients, and optimizer.step() updates our model's parameters.
+[LINE 43-46, highlight=44,45] After training, we use torch.no_grad() for inference. We predict an output for a new input, like 9.0, and print the result, which should be close to 38.
+[BLANK] That's it! A simple yet powerful example of a neural network learning a linear relationship. Thanks for watching!
